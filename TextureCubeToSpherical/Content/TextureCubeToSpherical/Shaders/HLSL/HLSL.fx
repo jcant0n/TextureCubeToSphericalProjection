@@ -30,7 +30,7 @@ inline float2 ComputeScreenPosition(float4 pos)
 float4 PS(PS_IN input) : SV_Target
 {
 	float2 screenPosition = ComputeScreenPosition(input.PositionCS);
-	float theta = screenPosition.x * 6.28318;
+	float theta = -screenPosition.x * 6.28318 - 1.57079;
 	float phi = screenPosition.y * 3.1415926 - 1.57079;
 
 	float3 dir;
